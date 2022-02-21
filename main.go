@@ -2,20 +2,20 @@ package main
 
 import (
 	"fmt"
+	// 第三方库
+	"rsc.io/quote"
+
 	"main/internal/stgo"
 	"main/internal/tforgo"
 )
 
 func main() {
 	fmt.Printf("Go 第一个程序\n")
-	stgo.Shelloworld()
+	stgo.Smain()
 
-	fmt.Printf("Go 并发测试\n")
-	tforgo.Tparaclac()
+	fmt.Println("Go 第三方库")
+	fmt.Println(quote.Hello())
 
-	fmt.Printf("Go 反射测试\n")
-	tforgo.Treflect()
-
-	fmt.Printf("Go 调用 C 测试\n")
-	tforgo.Tcprint()
+	fmt.Println("Go 特殊模块")
+	tforgo.Tmain()
 }
