@@ -1,6 +1,6 @@
 # I not want [Go](https://go.dev/)
 
-## [Install Go](https://go.dev/doc/install) on Debian
+## 在 Debian 安装 [Go](https://go.dev/doc/install)
 
 ```shell
 wget https://dl.google.com/go/go1.17.7.linux-amd64.tar.gz
@@ -10,7 +10,7 @@ source ~/.profile
 go version
 ```
 
-### Testing the Installation
+### 测试安装
 
 ```shell
 go mod init hello
