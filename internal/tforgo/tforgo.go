@@ -11,4 +11,10 @@ func Tmain() {
 
 	fmt.Printf("Go 调用 C 测试\n")
 	Tcprint()
+
+	Tclosure()
+
+	Tthread()
+
+	Tcgo2()
 }
