@@ -48,11 +48,11 @@ go build
 
 ```bash
 布尔类型： bool
-整型： int8 byte int16 int uint uintptr 等
+整型： int8 byte(uint8 的别名) int16 int uint uintptr 等
 浮点类型： float32 float64
 复数类型： complex64 complex128
 字符串： string
-字符类型： rune
+字符类型： rune  // int32 的别名，表示 Unicode 码点
 错误类型： error
 ```
 
