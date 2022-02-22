@@ -17,4 +17,6 @@ func Tmain() {
 	Tthread()
 
 	Tcgo2()
+
+	TjsonTest()
 }

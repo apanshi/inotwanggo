@@ -16,3 +16,7 @@
 hello
 cmd/main
 main
+*.sw*
+*.so*
+bin
+libs
