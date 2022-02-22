@@ -114,3 +114,27 @@ var chanName chan ElementType
 **建立连接后，就可以使用 `conn.Write()` 写数据 或者 `conn.Read()` 读数据。**
 
 #### 其他函数
+
+### 单元测试
+
+在相同的目录中创建一个以 `_test.go` 结尾的新文件作为你的包源文件。 在该文件中，加入 `import "testing"` 并编写以下形式的函数：
+
+```go
+func TestFoo(t *testing.T) {
+    ...
+}
+```
+
+在该目录中运行 `go test`。该脚本会查找 `Test` 函数， 构建一个测试二进制文件并运行它。
+
+### 杂记
+
+1. `Go` 没有三元操作符 `?:`，可以用下面的代码代替：
+
+```go
+if expr {
+    n = trueValue
+} else {
+    n = falseValue
+}
+```
