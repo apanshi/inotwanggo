@@ -5,3 +5,4 @@ Makefile
 bin
 main
 cmd
+internal/ccallgo/libs
