@@ -8,8 +8,6 @@ project "ccallgo"
 
     files { "**.c"}
 
-    includedirs { "libs" }
-
     libdirs { "libs" }
     links { "goforc" }
 
