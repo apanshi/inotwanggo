@@ -1,17 +1,18 @@
-workspace "ccallgo"
+workspace "ccallm"
     configurations { "Debug", "Release" }
 
-project "ccallgo"
+project "ccallc"
+    kind "SharedLib"
+    files {"./libc/**.c", "./libc/**.h"}
+
+project "ccallm"
     kind "ConsoleApp"
     language "C"
     targetdir "bin/%{cfg.buildcfg}"
 
-    files { "**.c"}
+    files { "ccallcm.c" }
 
-    includedirs { "libs" }
-
-    libdirs { "libs" }
-    links { "goforc" }
+    links { "ccallc" }
 
     filter "configurations:Debug"
         defines { "DEBUG" }
