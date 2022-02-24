@@ -1,15 +1,19 @@
 workspace "ccallgo"
     configurations { "Debug", "Release" }
 
+project "innnerlib"
+    kind "SharedLib"
+    files {"./libc/**.c", "./libc/**.h"}
+
 project "ccallgo"
     kind "ConsoleApp"
     language "C"
     targetdir "bin/%{cfg.buildcfg}"
 
-    files { "**.c"}
+    files { "ccallgo.c" }
 
     libdirs { "libs" }
-    links { "goforc" }
+    links { "goforc", "innnerlib"}
 
     filter "configurations:Debug"
         defines { "DEBUG" }
