@@ -7,4 +7,5 @@ func Smain() {
 	SbaseList()
 	SbaseSlice()
 	SbaseSwitch()
+	SbaseSelect()
 }
