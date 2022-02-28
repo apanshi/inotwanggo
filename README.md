@@ -94,7 +94,7 @@ go build
 
 #### 数组
 
-- 数组的索引 **Go 数组的索引是从 0 开始而不是从 1 开始的。**
+数组的索引 **Go 数组的索引是从 0 开始而不是从 1 开始的。**
 
 #### 切片
 
@@ -103,7 +103,7 @@ go build
 - 切片使用 `len()` 获取长度，`cap()` 获取容量。
 - 切片原则：**左闭右开（左含右不含）**。
 
-#### `switch` 语句
+### `switch` 语句
 
 `switch` 从上到下执行，直到匹配后，**不需要加 `break`**。
 
@@ -111,15 +111,15 @@ go build
 
 **`case` 后面不仅仅可以放常量，还可以放变量和表达式。**
 
-#### 自增自减只有 `++` `--` 语法
+### 自增自减只有 `++` `--` 语法
 
 Golang 的设计者认为 C 语言中的两种自增自减（例如：`++i` `i++`）写法会引起歧义。所以强制规定 `++` `--` 只能写在变量后面。
 
-**`++` `--` 是语句，不是表达式，必须独立占一行。**
+`++` `--` **是语句，不是表达式**，必须独立占一行。
 
-#### 值传递引用
+### 值传递引用
 
-##### 值传递
+#### 值传递
 
 **值类型**有: `int`系列、`float`系列、`bool`、`string`、`数组`、`结构体`：
 
@@ -127,7 +127,7 @@ Golang 的设计者认为 C 语言中的两种自增自减（例如：`++i` `i++
 2. 值类型作为函数参数传递, 是拷贝传递
 3. 在函数体内修改值类型参数, 不会影响到函数外的值
 
-##### 指针引用
+#### 引用类型
 
 **引用类型**有: 指针、`slice`、`map`、`channel`：
 
@@ -135,7 +135,7 @@ Golang 的设计者认为 C 语言中的两种自增自减（例如：`++i` `i++
 2. 引用类型作为函数参数传递,是引用传递
 3. 在函数体内修改引用类型参数,会影响到函数外的值
 
-### `iota`
+#### 关键字 `iota`
 
 `iota`，特殊常量，可以认为是一个可以被编译器修改的常量。
 
@@ -156,7 +156,10 @@ b = int32(a) //正确，可以把 int8 类型赋值给 int32 类型
 
 ```bash
 布尔类型： bool(只能设置 true 和 false 两个值)
-整型： int(32 或 64 位) int8 int16 rune(int32 的别名，保存中文字符) int64 unit(与 int 一样大小) byte(uint8 的别名，保存英文字符) uint16 uint32 uint64 uintptr(无符号整型，用于存放一个指针) 等
+整型： 
+    int(32 或 64 位) int8 int16 rune(int32 的别名，保存中文字符) int64 
+    unit(与 int 一样大小) byte(uint8 的别名，保存英文字符) uint16 uint32 uint64 
+    uintptr(无符号整型，用于存放一个指针) 等
 浮点类型： float32 float64
 复数类型： complex64 complex128
 字符串： string(不可更改)
@@ -220,10 +223,16 @@ c, d := 1, "hello world"
 **Go 没有 `while` 循环**
 
 ```bash
-`if` `else` 和 `else if`
-`switch` `case` `fallthrough` 和 `select`(用于通信的 `switch` 语句，每个 case 必须是通信操作：接收或发送，随机执行一个可运行的 **case**)
-for （`for init; condition; post { }` `for condition { } ` `for { }` `for-each range`(可以对 `slice` `map` `数组` `字符串` 等迭代循环)）
-goto
+条件选择：`if` `else` 和 `else if`
+循环控制：
+    `switch` `case` `fallthrough`
+    `select`(用于通信的 `switch` 语句，每个 case 必须是通信操作：接收或发送，随机执行一个可运行的 **case**)
+    for 
+        `for init; condition; post { }`
+        `for condition { } `
+        `for { }`
+        `for-each range`(可以对 `slice` `map` `数组` `字符串` 等迭代循环)）
+    goto
 ```
 
 #### `fo...range` 循环
