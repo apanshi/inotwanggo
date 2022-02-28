@@ -6,4 +6,5 @@ func Smain() {
 	Sgoto()
 	SbaseList()
 	SbaseSlice()
+	SbaseSwitch()
 }

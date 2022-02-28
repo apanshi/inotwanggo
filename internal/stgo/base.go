@@ -10,6 +10,35 @@ func SbaseList() {
 	}
 }
 
+func SbaseSwitch() {
+	var room = "cave"
+
+	switch room {
+	case "lake":
+		fmt.Println("lake")
+	case "cave":
+		fmt.Println("cave")
+		fallthrough
+	case "underground":
+		fmt.Println("underground")
+	}
+
+	var x = 10
+	x -= 1
+	x += 1
+
+	for x > 0 {
+		x-- // Golang 的设计者认为 C 语言中的两种自增自减（例如：++i ; i++）写法会引起歧义。所以强制规定 ++ -- 只能写在变量后面。
+		fmt.Println(x)
+	}
+
+	var n = 10
+	var sum = 0
+	for j := 0; j <= n; j++ {
+		sum = sum + j
+	}
+}
+
 func SbaseSlice() {
 	// 1.
 	var list2 = [5]string{"foo", "bar", "baz", "qux", "quux"}
