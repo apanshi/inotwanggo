@@ -36,6 +36,15 @@ go build
 
 ## GO Notes
 
+### Tips
+
+- Go 并不推荐使用多行注释，建议多用单行注释 `// 单行注释`，虽然有多行注释的语法 `/* 多行注释 *`。
+- Go 中 `_` 单独作为标识符出现时，代表 `空标识符`，对应的值会被忽略。
+- 输出十进制只能用 `%d`, 而不能像 C 语言那样通过 `%i`，如：`fmt.Printf("age = %d\n", age) //age = 33`。 `%b` 输出二进制。
+- `%T` 输出值的类型，如：`fmt.Printf("num1 = %T\n", num1) // int，num1 := 10`。`%v` 打印所有类型数据。
+- `defer` 语句常用于 释放资源、解除锁定 以及 错误处理等。
+- 单个包中代码执行顺序如下：`main 包 -> 常量 -> 全局变量 -> init 函数 --> main 函数 -> Exit`。
+
 ### Go语言中一共有 25 个关键字
 
 |1            |2           |3               |4           |5              |6            |7             |8           |
@@ -117,6 +126,10 @@ Golang 的设计者认为 C 语言中的两种自增自减（例如：`++i` `i++
 
 `++` `--` **是语句，不是表达式**，必须独立占一行。
 
+#### `defer`
+
+无论你在什么地方注册 `defer` 语句，它都会在所属函数执行完毕之后才会执行, 并且如果注册了多个 `defer` 语句，那么它们会按照**后进先出**的原则执行。
+
 ### 值传递引用
 
 #### 值传递
@@ -156,9 +169,9 @@ b = int32(a) //正确，可以把 int8 类型赋值给 int32 类型
 
 ```bash
 布尔类型： bool(只能设置 true 和 false 两个值)
-整型： 
-    int(32 或 64 位) int8 int16 rune(int32 的别名，保存中文字符) int64 
-    unit(与 int 一样大小) byte(uint8 的别名，保存英文字符) uint16 uint32 uint64 
+整型：
+    int(32 或 64 位) int8 int16 rune(int32 的别名，保存中文字符) int64
+    unit(与 int 一样大小) byte(uint8 的别名，保存英文字符) uint16 uint32 uint64
     uintptr(无符号整型，用于存放一个指针) 等
 浮点类型： float32 float64
 复数类型： complex64 complex128
@@ -227,7 +240,7 @@ c, d := 1, "hello world"
 循环控制：
     `switch` `case` `fallthrough`
     `select`(用于通信的 `switch` 语句，每个 case 必须是通信操作：接收或发送，随机执行一个可运行的 **case**)
-    for 
+    for
         `for init; condition; post { }`
         `for condition { } `
         `for { }`

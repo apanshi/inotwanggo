@@ -13,10 +13,10 @@ func Tmain() {
 	Tcprint()
 
 	Tclosure()
-
 	Tthread()
-
 	Tcgo2()
-
 	TjsonTest()
+	Tclosure2()
+	Tinterface()
+	Tclass()
 }

@@ -8,4 +8,5 @@ func Smain() {
 	SbaseSlice()
 	SbaseSwitch()
 	SbaseSelect()
+	SbaseDefer()
 }

@@ -83,3 +83,12 @@ func SbaseSlice() {
 	fmt.Println(len(slice5), cap(slice5))
 	fmt.Println(slice5[:])
 }
+
+func SbaseDefer() {
+	fmt.Println("normal0")
+	defer fmt.Println("defer1")
+	fmt.Println("normal1")
+	fmt.Println("normal2")
+	defer fmt.Println("defer2")
+	fmt.Println("normal3")
+}
