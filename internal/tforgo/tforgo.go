@@ -19,4 +19,6 @@ func Tmain() {
 	Tclosure2()
 	Tinterface()
 	Tclass()
+	Tlambda()
+	Tlambda2()
 }
