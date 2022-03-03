@@ -4,40 +4,40 @@ import "fmt"
 
 /* interface syntax
 type I interface {
-	M()
+    M()
 }
 */
 
 // 定义接口
 type usber interface {
-	start()
-	end()
+    start()
+    end()
 }
 
 type Computer struct {
-	name  string
-	model string
+    name  string
+    model string
 }
 
 // 实现接口的所有方法
 func (cm Computer) start() {
-	fmt.Printf("%s start\n", cm.name)
+    fmt.Printf("%s start\n", cm.name)
 }
 
 func (cm Computer) end() {
-	fmt.Printf("%s end\n", cm.name)
+    fmt.Printf("%s end\n", cm.name)
 }
 
 // 使用接口的方法
 func working(u usber) {
-	u.start()
-	u.end()
+    u.start()
+    u.end()
 }
 
 func Tinterface() {
-	cm := Computer{
-		name:  "Dell",
-		model: "Fx1234",
-	}
-	working(cm)
+    cm := Computer{
+        name:  "Dell",
+        model: "Fx1234",
+    }
+    working(cm)
 }

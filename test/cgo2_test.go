@@ -1,12 +1,12 @@
 package test
 
 import (
-	"fmt"
-	"main/internal/tforgo"
-	"testing"
+    "fmt"
+    "main/internal/tforgo"
+    "testing"
 )
 
 func TestTforgo(t *testing.T) {
-	fmt.Println("Test for package Tforgo")
-	tforgo.Tcgo2()
+    fmt.Println("Test for package Tforgo")
+    tforgo.Tcgo2()
 }

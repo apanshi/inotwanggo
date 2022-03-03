@@ -1,34 +1,34 @@
 package tforgo
 
 import (
-	"fmt"
-	"runtime"
-	"sync"
+    "fmt"
+    "runtime"
+    "sync"
 )
 
 var counter int = 0
 
 func Count(lock *sync.Mutex) {
-	lock.Lock()
-	counter++
-	fmt.Println(counter)
-	lock.Unlock()
+    lock.Lock()
+    counter++
+    fmt.Println(counter)
+    lock.Unlock()
 }
 
 func Tthread() {
-	lock := &sync.Mutex{}
+    lock := &sync.Mutex{}
 
-	for i := 0; i < 10; i++ {
-		go Count(lock)
-	}
+    for i := 0; i < 10; i++ {
+        go Count(lock)
+    }
 
-	for {
-		lock.Lock()
-		c := counter
-		lock.Unlock()
-		runtime.Gosched()
-		if c >= 10 {
-			break
-		}
-	}
+    for {
+        lock.Lock()
+        c := counter
+        lock.Unlock()
+        runtime.Gosched()
+        if c >= 10 {
+            break
+        }
+    }
 }

@@ -4,13 +4,13 @@ package tforgo
 // #include <stdlib.h>
 import "C"
 import (
-	"fmt"
-	"unsafe"
+    "fmt"
+    "unsafe"
 )
 
 func Tcprint() {
-	cstr := C.CString("Hello, world! from go using C\n")
-	fmt.Println(cstr)
-	C.puts(cstr)
-	C.free(unsafe.Pointer(cstr))
+    cstr := C.CString("Hello, world! from go using C\n")
+    fmt.Println(cstr)
+    C.puts(cstr)
+    C.free(unsafe.Pointer(cstr))
 }

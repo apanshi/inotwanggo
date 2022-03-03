@@ -10,6 +10,18 @@ source ~/.profile
 go version
 ```
 
+### `go` 命令报错
+
+使用 `zsh` 的话假如报错： `zsh: command not found: go。`， 打开 `~/.zshrc`， 在原有 `export PATH` 增加如下配置：
+
+```bash
+# go 配置
+export GOPATH="$HOME/go"
+export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
+```
+
+保存退出后，执行 `source ~/.zshrc` 生效。
+
 ### 测试安装
 
 ```shell

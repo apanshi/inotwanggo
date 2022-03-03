@@ -12,16 +12,16 @@ void hello() {
 import "C"
 
 import (
-	"fmt"
-	"unsafe"
+    "fmt"
+    "unsafe"
 )
 
 func Tcgo2() {
-	C.hello()
-	ret := C.SayHelloCxx()
-	fmt.Println(ret)
+    C.hello()
+    ret := C.SayHelloCxx()
+    fmt.Println(ret)
 
-	cs_hello := C.CString("Freom C’s hello")
-	C.SayHelloC(cs_hello)
-	C.free(unsafe.Pointer(cs_hello))
+    cs_hello := C.CString("Freom C’s hello")
+    C.SayHelloC(cs_hello)
+    C.free(unsafe.Pointer(cs_hello))
 }
