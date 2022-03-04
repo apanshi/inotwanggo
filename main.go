@@ -7,6 +7,7 @@ import (
 
     "main/internal/stgo"
     "main/internal/tforgo"
+    "main/texec"
 )
 
 func init() {
@@ -34,6 +35,6 @@ func main() {
     fmt.Println(quote.Hello())
 
     OtherMain()
-
     fmt.Println("Go 初始化 main(): ", b)
+    texec.Trune()
 }

@@ -59,6 +59,8 @@ go build
 - `nil` 是 `interface`、`function`、`pointer`、`map`、`slice` 和 `channel` 类型变量的默认初始值。
 - 很多编程语言使用 `~` 作为一元按位取反（NOT）操作符，Go 重用 `^` XOR 操作符来按位取反。
 - AND NOT `&^` 操作符，不同位才取 1。
+- `string` 只读的采用 utf8 编码的字节 `slice`，`len()` 函数求出的长度不是**字符个数，是字节个数**。
+- `rune` 是 `int32` 的**别名**，保存中文字符；`byte` 是 `uint8` 的别名，可变长度的字节 `slice`，保存**英文字符**。
 
 ### Go语言中一共有 25 个关键字
 
@@ -83,8 +85,6 @@ go build
 - `type` 用于声明自定义类型
 - `map` ：用于声明 `map` 类型数据
 - `range` ：用于读取 `slice`、`map`、`chan` 数据
-
-
 
 #### Go 语言中除了关键字以外，还有 36 个 `预定义标识符`
 
