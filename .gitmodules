@@ -1,0 +1,3 @@
+[submodule "internal/gowork/example"]
+	path = internal/gowork/example
+	url = https://go.googlesource.com/example
