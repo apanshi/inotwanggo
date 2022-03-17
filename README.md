@@ -10,6 +10,11 @@ source ~/.profile
 go version
 ```
 
+### `go` 多版本控制
+
+1. 可以通过 [docker](https://www.docker.com/) 来管理；
+2. 可以通过 [voidint/g：Golang Version Manager](https://github.com/voidint/g) 来管理，更方便，推荐。
+
 ### `go` 命令报错
 
 使用 `zsh` 的话假如报错： `zsh: command not found: go。`， 打开 `~/.zshrc`， 在原有 `export PATH` 增加如下配置：
