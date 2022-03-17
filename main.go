@@ -8,6 +8,9 @@ import (
     "main/internal/stgo"
     "main/internal/tforgo"
     "main/texec"
+
+	// 1.18
+	"main/internal/newf"
 )
 
 func init() {
@@ -37,4 +40,7 @@ func main() {
     OtherMain()
     fmt.Println("Go 初始化 main(): ", b)
     texec.Trune()
+
+	// 1.18
+	newf.NewFGenerace()
 }
