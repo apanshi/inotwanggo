@@ -1,4 +1,4 @@
-# I not want [Go](https://go.dev/)
+# 我并不想学习 [Go](https://go.dev/)
 
 ## 在 Debian 安装 [Go](https://go.dev/doc/install)
 
@@ -14,6 +14,44 @@ go version
 
 1. 可以通过 [docker](https://www.docker.com/) 来管理；
 2. 可以通过 [voidint/g：Golang Version Manager](https://github.com/voidint/g) 来管理，更方便，推荐。
+
+### `go` 版本升级
+
+go1.17.4 升级到 go1.18
+
+#### 1. 源码升级
+
+```shell
+wget https://go.dev/dl/go1.18.src.tar.gz
+tar -xvf go1.18.src.tar.gz
+cd go/src
+bash all.bash
+cd ../../ 
+mv go /usr/local/go
+go version
+
+# 1. /usr/local/go 就是原先使用的老版本的 go，如此完成覆盖更新；
+# 2. 如果 go 根目录也改变了，则需要去 .bash_profile 中修改 GOPATH坏 境变量；
+# 3. 如果打算安装两个（多个）版本，则不要覆盖老版本，并通过修改 GOPATH 在新老版本间切换。
+```
+
+1. 可能需要的报错
+
+```shell
+Building Go cmd/dist using /usr/local/go. (go1.17.4 linux/amd64)
+./make.bash: eval: line 201: unexpected EOF while looking for matching `"'
+
+报错的话，把 201-204 注释掉就可以的。
+```
+
+#### 2. release 包升级
+
+```bash
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+go version
+```
+
 
 ### `go` 命令报错
 
